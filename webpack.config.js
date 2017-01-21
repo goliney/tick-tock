@@ -9,11 +9,11 @@ const config = {
         filename: 'app.js',
         path: path.resolve(__dirname, buildDir)
     },
-    devtool: "cheap-eval-source-map",
+    // devtool: "source-map",
     devServer: {
         contentBase: buildDir,
         open: true,
-        inline: true,
+        inline: false,
         port: 8888
     },
     module: {
@@ -40,7 +40,7 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Change me in webpack.config.js',
+            title: 'Tick Tock',
             hash: true,
             showErrors: true,
             template: 'src/index.html'

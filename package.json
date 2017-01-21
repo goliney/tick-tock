@@ -1,5 +1,5 @@
 {
-  "name": "my-project-name",
+  "name": "tick-tock",
   "version": "1.0.0",
   "engines": {
     "node": ">=6"
@@ -9,7 +9,7 @@
     "build": "./node_modules/webpack/bin/webpack.js",
     "dev": "./node_modules/.bin/webpack-dev-server"
   },
-  "author": "me",
+  "author": "Sergey Goliney sergey@goliney.com",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
