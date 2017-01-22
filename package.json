@@ -11,7 +11,9 @@
   },
   "author": "Sergey Goliney sergey@goliney.com",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "postcss-loader": "^1.2.2"
+  },
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
