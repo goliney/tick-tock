@@ -27,6 +27,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-origin: center;
   animation: spin $anim-duration $anim-delay $anim-ease infinite;
 
   .tick {
