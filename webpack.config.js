@@ -13,7 +13,7 @@ const config = {
     devServer: {
         contentBase: buildDir,
         open: true,
-        inline: false,
+        inline: true,
         port: 8888
     },
     module: {

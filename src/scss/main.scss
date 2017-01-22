@@ -11,7 +11,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #212121;
+  background-color: #1d1d1d;
 }
 
 body {
@@ -19,20 +19,28 @@ body {
   font-family: Helvetica, serif;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
 
-.clock {
-  width: 100%;
-  height: 100%;
+.clock,
+.clock-face {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform-origin: center;
+  width: 100%;
+  height: 100%;
+}
+
+.clock {
+  transform-origin: center center;
   animation: spin $anim-duration $anim-delay $anim-ease infinite;
 
   .tick {
     position: absolute;
-    transform-origin: center;
+    transform-origin: center center;
     line-height: $base-font-size * 2;
     color: $base-color;
 
@@ -60,7 +68,6 @@ body {
 
     &:nth-of-type(odd):before {
       content: 'I';
-
     }
 
     &:nth-of-type(even):before {
@@ -70,15 +77,6 @@ body {
 }
 
 .clock-face {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-
-
   .tick-top,
   .tick-bottom {
     position: absolute;
