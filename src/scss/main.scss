@@ -20,18 +20,29 @@ body {
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
+  flex-direction: column;
 }
 
 .clock,
 .clock-face {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 0;
   width: 100%;
   height: 100%;
+}
+
+.letter {
+  // center all stuff (flex-box is bad b/c of position absolute)
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  margin-left: -$base-font-size/2;
+  margin-top: -$base-font-size;
+  width: $base-font-size;
+  line-height: $base-font-size * 2;
+  text-align: center;
+  word-break: break-all;
 }
 
 .clock {
@@ -39,9 +50,7 @@ body {
   animation: spin $anim-duration $anim-delay $anim-ease infinite;
 
   .tick {
-    position: absolute;
-    transform-origin: center center;
-    line-height: $base-font-size * 2;
+    transform-origin: center;
     color: $base-color;
 
     @for $i from 0 through 12 {
@@ -79,18 +88,12 @@ body {
 .clock-face {
   .tick-top,
   .tick-bottom {
-    position: absolute;
-    top: 50%;
     transform-origin: top center;
-    text-align: center;
-    width: $base-font-size;
-    word-wrap: break-word;
-    line-height: $base-font-size * 2;
     color: $face-color;
   }
 
   .tick-top {
-    transform: translateY(calc(#{-$radius} - #{$base-font-size * 3}));
+    transform: translateY(calc(#{-$radius} - #{$base-font-size * 2}));
 
     &:before {
       content: 'T';
@@ -98,7 +101,7 @@ body {
   }
 
   .tick-bottom {
-    transform: translateY(calc(#{-$radius} + #{$base-font-size}));
+    transform: translateY(calc(#{-$radius} + #{$base-font-size * 2}));
 
     &:before {
       content: 'CK';  // or C, or K, English is weird sometimes
